@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'home.html' %}
+
+{% load static %}
+
+{% block main_content  %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+{% endblock %}
+
+    <form method="POST" class="form-group">
+	{% csrf_token %}
+	{{ form }}
+	<button type="submit" class="btn btn-success">Login</button>
+    </form>
+
+
+{% endblock %}

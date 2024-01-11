@@ -1,0 +1,28 @@
+.form-group {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 300px;
+    height: 100%;
+}
+
+.btn {
+    margin-top: 15px;
+    background-color: #11246a;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+}
+
+.btn.hidden {
+    background-color: transparent;
+    border-color: #fff;
+}
