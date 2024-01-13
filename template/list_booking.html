@@ -1,0 +1,28 @@
+<!-- list_booking.html -->
+
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main_content %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'list_booking.css' %}">
+{% endblock %}
+
+<div class="list-booking-page">
+    <h1>List Booking</h1>
+    <form action="{% url 'booking:search_result' %}" method='post' enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ search.as_p }}
+        <input name="search" type="submit" value="Search" class="btn btn-success">
+    </form>
+
+    {% for b in booking %}
+        <div class="booking-item">
+            <p>{{ b.id }} | <a href="ticket/payment_detail/{{ b.id }}">{{ b.code }}</a> | {{ b.created_at }} | {{ b.customer }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
